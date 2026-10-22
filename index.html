@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#64283f">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Bienvenue au mariage de Ianja et Eliza. Retrouvez votre table et les personnes qui partageront votre soirée.">
+  <title>Ianja & Eliza — Notre plan de table</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="photos.css">
+  <script defer src="donnees.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="top"><a href="#" aria-label="Accueil Ianja et Eliza">I <span>&</span> E</a><a class="table-shortcut" href="#search-title">Trouver ma table ↓</a></header>
+  <main>
+    <section class="hero" aria-labelledby="title">
+      <h1 id="title" class="sr-only">Le mariage de Ianja & Eliza</h1>
+      <img class="welcome-art" src="images/panneau-mariage.png" alt="Ianja et Eliza, 29 mai 2027. Une croix en bois ornée de fleurs bordeaux, mauves et blanches sur un fond ivoire." fetchpriority="high" width="1448" height="1086">
+      <p id="date" class="date"></p>
+      <div class="rule" aria-hidden="true"></div>
+      <h2>À nos côtés, pour ce grand jour</h2>
+      <p class="intro">Merci de votre présence pour vous réjouir avec nous.<br>Retrouvez votre table et profitez de la soirée.</p>
+    </section>
+    <section class="finder" aria-labelledby="search-title">
+      <p class="eyebrow">UNE PLACE POUR CHACUN DE VOUS</p>
+      <h2 id="search-title">Retrouvez votre table</h2>
+      <label for="search">Votre prénom ou votre nom</label>
+      <div class="search-wrap"><span aria-hidden="true">⌕</span><input type="search" id="search" placeholder="Par exemple : Camille" autocomplete="off" spellcheck="false"><button id="clear" type="button" hidden aria-label="Effacer la recherche">×</button></div>
+      <p class="hint">Quelques lettres suffisent, avec ou sans accents.</p>
+      <p id="status" role="status" aria-live="polite"></p>
+      <ul id="results" class="results"></ul>
+    </section>
+    <section class="tables-section" aria-labelledby="tables-title">
+      <div class="section-head"><div><p class="eyebrow">QUAND NOS BIEN-AIMÉS SE RENCONTRENT</p><h2 id="tables-title">À table !</h2></div><p id="count"></p></div>
+      <p class="table-intro">Touchez une table pour découvrir ses invités.</p>
+      <div id="tables" class="tables"></div>
+    </section>
+    <p id="demo" class="demo">Version de démonstration · Les noms de tables sont proposés et les invités sont fictifs.</p>
+    <section class="memories" aria-labelledby="memories-title">
+      <p class="eyebrow">CÉLÉBRER LA GRÂCE DE DIEU</p>
+      <h2 id="memories-title">CELUI QUI NOUS A TANT AIMÉS ET NOUS A UNIS</h2>
+      <p class="intro">Des souvenirs à deux, et aujourd’hui un bonheur à partager avec vous.</p>
+      <div class="photo-gallery">
+        <figure><img src="images/jardin.jpeg" alt="Ianja et Eliza blottis l’un contre l’autre dans un jardin ensoleillé." loading="lazy" decoding="async" width="1600" height="1200"><figcaption>Les petits bonheurs</figcaption></figure>
+        <figure><img src="images/soleil.jpeg" alt="Ianja et Eliza dans la lumière dorée du soleil couchant." loading="lazy" decoding="async" width="1536" height="2048"><figcaption>Les instants dorés</figcaption></figure>
+        <figure><img src="images/mer.jpeg" alt="Ianja et Eliza enlacés sur la plage, devant les falaises et la mer." loading="lazy" decoding="async" width="1536" height="2048"><figcaption>Et tous les horizons</figcaption></figure>
+      </div>
+      <blockquote><p>« A threefold cord is not quickly broken. »</p><cite>Ecclésiastes 4.12</cite></blockquote>
+    </section>
+    <noscript><p>Activez JavaScript pour consulter les tables et rechercher votre nom.</p></noscript>
+  </main>
+  <footer><span>Ianja & Eliza</span><p>Merci de faire partie de notre histoire.</p><span aria-hidden="true">✧</span></footer>
+</body>
+</html>
