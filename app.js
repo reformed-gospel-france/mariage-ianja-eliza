@@ -7,6 +7,8 @@ const results = document.querySelector("#results");
 const status = document.querySelector("#status");
 const clear = document.querySelector("#clear");
 const details = [];
+const english = () => window.mariageLangue === "en";
+const guestLabel = n => english() ? `${n} guest${n === 1 ? "" : "s"}` : `${n} invité${n === 1 ? "" : "s"}`;
 document.querySelector("#date").textContent = data.date;
 document.querySelector("#demo").hidden = !data.demonstration;
 document.querySelector("#count").textContent = `${data.tables.length} tables · ${data.tables.reduce((sum, table) => sum + table.invites.length, 0)} invités`;
@@ -24,7 +26,7 @@ function update() {
   if (!query) { status.textContent = ""; return; }
   const matches = [];
   data.tables.forEach((table, index) => table.invites.forEach(name => { if (tokens.every(token => normalize(name).includes(token))) matches.push({ name, table, index }); }));
-  status.textContent = matches.length ? `${matches.length} invité${matches.length > 1 ? "s" : ""} trouvé${matches.length > 1 ? "s" : ""}` : "Aucun nom trouvé. Essayez un autre prénom ou demandez à nos proches de vous aider.";
+  status.textContent = matches.length ? (english() ? `${guestLabel(matches.length)} found` : `${guestLabel(matches.length)} trouvé${matches.length > 1 ? "s" : ""}`) : (english() ? "No name found. Try another first name or ask our loved ones for help." : "Aucun nom trouvé. Essayez un autre prénom ou demandez à nos proches de vous aider.");
   matches.forEach(({ name, table, index }) => {
     const item = element("li"); const button = element("button", undefined, "result"); button.type = "button";
     button.append(element("span", name), element("span", `Table ${table.numero} · ${table.nom} ↗`, "result-table"));
@@ -34,3 +36,11 @@ function update() {
 }
 search.addEventListener("input", update);
 clear.addEventListener("click", () => { search.value = ""; update(); search.focus(); });
+function refreshLanguage() {
+  document.querySelector("#date").textContent = english() && data.date === "29 mai 2027" ? "29 May 2027" : data.date;
+  document.querySelector("#count").textContent = `${data.tables.length} tables · ${guestLabel(data.tables.reduce((sum, table) => sum + table.invites.length, 0))}`;
+  details.forEach((card, i) => { card.querySelector(".guest-count").textContent = guestLabel(data.tables[i].invites.length); });
+  update();
+}
+document.addEventListener("mariage:language", refreshLanguage);
+refreshLanguage();
