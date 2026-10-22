@@ -18,9 +18,9 @@ h2,.memories h2{font-family:Georgia,'Times New Roman',serif;font-style:italic;fo
 .photo-gallery{display:grid;grid-template-columns:1fr;gap:25px;max-width:400px;margin:30px auto 0}
 .photo-gallery figure{margin:0;padding:10px 10px 0;background:#fffaf2;border:1px solid #d9c2ac;box-shadow:0 8px 22px #59162f0b;border-radius:140px 140px 5px 5px;overflow:hidden}
 .photo-gallery img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:130px 130px 2px 2px}
-.photo-gallery figure:first-child img{object-position:47% 65%}
-.photo-gallery figure:nth-child(2) img{object-position:50% 43%}
-.photo-gallery figure:nth-child(3) img{object-position:55% 65%}
+.photo-gallery figure:first-child img{object-position:50% 85%}
+.photo-gallery figure:nth-child(2) img{object-position:46% 60%}
+.photo-gallery figure:nth-child(3) img{object-position:50% 40%}
 .photo-gallery figcaption{font:italic 20px Georgia,serif;color:var(--wine);padding:20px 6px}
 .memories blockquote{margin:40px auto 0;max-width:520px;padding:28px 15px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);color:var(--wine)}
 .memories blockquote p{font:italic 23px/1.5 Georgia,serif;margin:0 0 12px}
