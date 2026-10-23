@@ -13,6 +13,11 @@
     en:{sending:'Sending…',success:'Thank you! Your response has been saved. We look forward to celebrating with you.',declined:'Thank you for letting us know. Your response has been saved.',timeout:'We have not received confirmation that your response was saved. You may retry: an identical retry will not create a duplicate.',error:'We could not confirm that your response was saved. Please try again shortly.',closed:'RSVPs are now closed.',invalid:'Please check the form fields.',names:'Enter one person per line, matching the total number of people.'}
   };
   Object.assign(en, {
+    deadline:'Strict deadline: 10 January 2027 at 11:59 pm (Paris time).',
+    deadlineRule:'After this deadline, it will no longer be possible to submit a response. No exceptions will be made due to our organisational commitments with the caterer.',
+    deadlineReminder:'No responses can be submitted after 10 January 2027 at 11:59 pm (Paris time), without exception.',
+    closedOne:'RSVPs closed on 10 January 2027 at 11:59 pm (Paris time). Responses can no longer be submitted. No exceptions will be made due to our organisational commitments with the caterer.',
+    seatingNotice:'On our wedding day, 29 May 2027, you will be able to access the seating plan directly on this website using this same link or QR code.',
     send:'Review my response',reviewTitle:'Check your summary',reviewIntro:'Your response has not been sent yet. Please check the names, attendance and email address before confirming.',reviewRule:'Only the people named on your invitation can be included.',editResponse:'Edit my response',confirmSend:'Confirm and send',
     email:'Your email address',phone:'Your phone number',country:'Country and calling code',
     phoneHelp:'Choose the country code on the left, then enter the rest of the number. For example, for the UK: +44 and 7700 900123, without the initial zero.',
