@@ -6,7 +6,7 @@
     const en = document.documentElement.lang === 'en';
     document.querySelector('#date').textContent=en?'29 May 2027':'29 mai 2027';
     document.querySelector('#search-title').textContent=en?'Your table will be revealed on our wedding day':'Votre table se dévoilera le jour J';
-    document.querySelector('.hint').textContent=en?'Find your place here on 29 May 2027.':'Retrouvez votre place ici le 29 mai 2027.';
+    document.querySelector('.hint').textContent=en?'Search available on 29 May 2027.':'Recherche disponible le 29 mai 2027.';
     document.querySelector('.table-intro').textContent=en?'Table names and guest names will be revealed on our wedding day.':'Les noms des tables et des invités seront dévoilés le jour du mariage.';
     document.querySelector('.table-shortcut').textContent=en?'Our tables ↓':'Nos tables ↓';
     document.querySelector('#demo').hidden=true;

@@ -29,9 +29,9 @@
     <section class="finder" aria-labelledby="search-title">
       <p class="eyebrow">UNE PLACE POUR CHACUN DE VOUS</p>
       <h2 id="search-title">Retrouvez votre table</h2>
-      <label for="search" hidden>Votre prénom ou votre nom</label>
-      <div class="search-wrap" hidden><span aria-hidden="true">⌕</span><input type="search" id="search" disabled placeholder="Par exemple : Camille" autocomplete="off" spellcheck="false"><button id="clear" type="button" hidden aria-label="Effacer la recherche">×</button></div>
-      <p class="hint">Retrouvez votre place ici le 29 mai 2027.</p>
+      <label for="search">Votre prénom ou votre nom</label>
+      <div class="search-wrap"><span aria-hidden="true">⌕</span><input type="search" id="search" disabled aria-describedby="search-availability" placeholder="Par exemple : Camille" autocomplete="off" spellcheck="false"><button id="clear" type="button" hidden aria-label="Effacer la recherche">×</button></div>
+      <p class="hint" id="search-availability">Recherche disponible le 29 mai 2027.</p>
       <p id="status" role="status" aria-live="polite"></p>
       <ul id="results" class="results"></ul>
     </section>
