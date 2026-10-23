@@ -32,6 +32,8 @@
     toggle.textContent='☰ Menu';nav.setAttribute('aria-label',lang==='en'?'Main navigation':'Navigation principale');
     links.forEach(({link,href,fr,en})=>{link.textContent=lang==='en'?en:fr;link.href=`${href}?lang=${lang}`;if(fr==='Plan de table'&&!seatingOpen){const badge=document.createElement('span');badge.className='nav-badge';badge.textContent=lang==='en'?'29 May':'29 mai';link.append(badge);}});
     document.querySelectorAll('[data-page-fr]').forEach(el=>{el.textContent=el.getAttribute(lang==='en'?'data-page-en':'data-page-fr');});
+    document.querySelectorAll('[data-alt-fr]').forEach(el=>el.alt=el.getAttribute(lang==='en'?'data-alt-en':'data-alt-fr'));
+    document.querySelectorAll('[data-practical-link]').forEach(link=>{link.href=link.getAttribute('href').split('?')[0]+`?lang=${lang}`;});
     document.querySelectorAll('[data-lang]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.lang===lang)));
     const heading=document.querySelector('[data-page-title]');if(heading)document.title=`Ianja & Eliza — ${heading.textContent}`;
     const home=document.querySelector('.page-home');if(home)home.href=`index.html?lang=${lang}`;
