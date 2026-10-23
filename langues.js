@@ -16,7 +16,7 @@
     '.memories > .eyebrow': 'CELEBRATING THE GRACE OF GOD',
     '#memories-title': 'HE WHO HAS LOVED US SO MUCH AND UNITED US',
     '.memories > .intro': 'Memories of the two of us, and now a joy to share with you.',
-    '.photo-gallery figure:nth-child(1) figcaption': 'Everyday tenderness',
+    '.photo-gallery figure:nth-child(1) figcaption': 'A memory from Étretat',
     '.photo-gallery figure:nth-child(2) figcaption': 'Hand in hand',
     '.photo-gallery figure:nth-child(3) figcaption': 'The joy of being together',
     '.memories cite': 'Ecclesiastes 4:12',
