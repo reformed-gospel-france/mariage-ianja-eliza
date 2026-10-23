@@ -13,7 +13,7 @@
   const items = [
     ['index.html','Accueil','Home'],['infos-pratiques.html','Infos pratiques','Practical information'],
     ['liste-de-mariage.html','Liste de mariage','Gift list'],
-    [seatingOpen?'plan-de-table.html':'acces-plan-de-table.html','Plan de table','Seating plan'],
+    ['plan-de-table.html','Plan de table','Seating plan'],
     ['questions-frequentes.html','Questions fréquentes','FAQs']
   ];
   const file = location.pathname.split('/').pop() || 'index.html';
