@@ -1,34 +1,34 @@
-/* Bustes détourés : aucune bordure, fleur ou inscription dans les portraits. */
+/* Une fenêtre correspond exactement à une case : aucun portrait voisin ne peut déborder. */
 .portrait-table{position:relative;isolation:isolate;min-height:335px;padding:244px 14px 22px;background:linear-gradient(160deg,#fffaf2,#f1e7db)}
-.portrait-table::before{content:'';position:absolute;z-index:-1;top:14px;left:50%;transform:translateX(-50%);width:200px;height:220px;border:0;border-radius:0;box-shadow:none;background-color:transparent;background-repeat:no-repeat;mask-image:linear-gradient(to bottom,#000 88%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,#000 88%,transparent 100%)}
+.portrait-table::before{content:'';position:absolute;z-index:-1;top:22px;left:50%;transform:translateX(-50%);width:200px;height:200px;border:0;border-radius:0;box-shadow:none;background-color:transparent;background-repeat:no-repeat;mask-image:none;-webkit-mask-image:none}
 .portrait-table .table-name{margin:9px 0;font-size:25px}.portrait-table>.eyebrow{font-size:10px}.portrait-table .guest-count{display:block}
-.portrait-0::before{background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:0px 10px}
-.portrait-1::before{background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:-200px 10px}
-.portrait-2::before{background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:-400px 10px}
-.portrait-3::before{background-image:url('images/bustes-valides.png');background-size:810px 296.57px;background-position:-629px -30px}
-.portrait-4::before{background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:-800px 10px}
-.portrait-5::before{background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:-1000px 10px}
-.portrait-6::before{background-image:url('images/bustes-revisions.png');background-size:600px 400px;background-position:0px 10px}
-.portrait-7::before{background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:-200px -190px}
-.portrait-8::before{background-image:url('images/bustes-valides.png');background-size:810px 296.57px;background-position:19px -30px}
-.portrait-9::before{background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:-600px -190px}
-.portrait-10::before{background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:-800px -190px}
-.portrait-11::before{background-image:url('images/bustes-valides.png');background-size:810px 296.57px;background-position:-143px -30px}
-.portrait-12::before{background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:0px -390px}
-.portrait-13::before{background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:-200px -390px}
-.portrait-14::before{background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:-400px -390px}
-.portrait-15::before{background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:-600px -390px}
-.portrait-16::before{background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:-800px -390px}
-.portrait-17::before{background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:-1000px -390px}
-.portrait-18::before{background-image:url('images/bustes-revisions.png');background-size:600px 400px;background-position:-200px 10px}
-.portrait-19::before{background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:-200px -590px}
-.portrait-20::before{background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:-400px -590px}
-.portrait-21::before{background-image:url('images/bustes-revisions.png');background-size:600px 400px;background-position:-400px 10px}
-.portrait-22::before{background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:-800px -590px}
-.portrait-23::before{background-image:url('images/bustes-revisions.png');background-size:600px 400px;background-position:0px -190px}
-.portrait-24::before{background-image:url('images/bustes-valides.png');background-size:810px 296.57px;background-position:-305px -30px}
-.portrait-25::before{background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:-200px -790px}
-.portrait-26::before{background-image:url('images/bustes-revisions.png');background-size:600px 400px;background-position:-200px -190px}
-.portrait-27::before{background-image:url('images/bustes-revisions.png');background-size:600px 400px;background-position:-400px -190px}
-.portrait-28::before{background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:-800px -790px}
-.portrait-29::before{background-image:url('images/bustes-valides.png');background-size:810px 296.57px;background-position:-467px -30px}
+.portrait-0::before{width:200px;height:200px;background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:0px 0px}
+.portrait-1::before{width:200px;height:200px;background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:-200px 0px}
+.portrait-2::before{width:200px;height:200px;background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:-400px 0px}
+.portrait-3::before{width:162px;height:220px;background-image:url('images/bustes-valides.png');background-size:810px 296.5701881331404px;background-position:-648px -36px}
+.portrait-4::before{width:200px;height:200px;background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:-800px 0px}
+.portrait-5::before{width:200px;height:200px;background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:-1000px 0px}
+.portrait-6::before{width:200px;height:200px;background-image:url('images/bustes-revisions.png');background-size:600px 400px;background-position:0px 0px}
+.portrait-7::before{width:200px;height:200px;background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:-200px -200px}
+.portrait-8::before{width:162px;height:220px;background-image:url('images/bustes-valides.png');background-size:810px 296.5701881331404px;background-position:0px -36px}
+.portrait-9::before{width:200px;height:200px;background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:-600px -200px}
+.portrait-10::before{width:200px;height:200px;background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:-800px -200px}
+.portrait-11::before{width:162px;height:220px;background-image:url('images/bustes-valides.png');background-size:810px 296.5701881331404px;background-position:-162px -36px}
+.portrait-12::before{width:200px;height:200px;background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:0px -400px}
+.portrait-13::before{width:200px;height:200px;background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:-200px -400px}
+.portrait-14::before{width:200px;height:200px;background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:-400px -400px}
+.portrait-15::before{width:200px;height:200px;background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:-600px -400px}
+.portrait-16::before{width:200px;height:200px;background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:-800px -400px}
+.portrait-17::before{width:200px;height:200px;background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:-1000px -400px}
+.portrait-18::before{width:200px;height:200px;background-image:url('images/bustes-revisions.png');background-size:600px 400px;background-position:-200px 0px}
+.portrait-19::before{width:200px;height:200px;background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:-200px -600px}
+.portrait-20::before{width:200px;height:200px;background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:-400px -600px}
+.portrait-21::before{width:200px;height:200px;background-image:url('images/bustes-revisions.png');background-size:600px 400px;background-position:-400px 0px}
+.portrait-22::before{width:200px;height:200px;background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:-800px -600px}
+.portrait-23::before{width:200px;height:200px;background-image:url('images/bustes-revisions.png');background-size:600px 400px;background-position:0px -200px}
+.portrait-24::before{width:162px;height:220px;background-image:url('images/bustes-valides.png');background-size:810px 296.5701881331404px;background-position:-324px -36px}
+.portrait-25::before{width:200px;height:200px;background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:-200px -800px}
+.portrait-26::before{width:200px;height:200px;background-image:url('images/bustes-revisions.png');background-size:600px 400px;background-position:-200px -200px}
+.portrait-27::before{width:200px;height:200px;background-image:url('images/bustes-revisions.png');background-size:600px 400px;background-position:-400px -200px}
+.portrait-28::before{width:200px;height:200px;background-image:url('images/bustes-serie.png');background-size:1200px 1000px;background-position:-800px -800px}
+.portrait-29::before{width:162px;height:220px;background-image:url('images/bustes-valides.png');background-size:810px 296.5701881331404px;background-position:-486px -36px}
