@@ -1,6 +1,6 @@
 // Configuration publique du formulaire et des informations pratiques.
 window.CONFIRMATION = {
-  "endpoint": "https://script.google.com/macros/s/AKfycbwaRLwE7f2C-OgsD5Yuv3ocMb2y-AY3p8-oq3hZEOCCw7VcVESaFabCQL6MNDP8kAPD/exec",
+  "endpoint": "https://script.google.com/macros/s/AKfycbxJftW2p5RphWRYY0s6f3RMP9ymVxU98yor5Xyt_JGZA_BQg81vgS75A5L2W6kSEhnc/exec",
   "closingDate": "2027-01-10",
   "seatingDate": "2027-05-29",
   "practical": {
