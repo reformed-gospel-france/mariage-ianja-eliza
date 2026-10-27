@@ -14,8 +14,8 @@
   };
   Object.assign(en, {
     yourAge:'Your age group on the wedding day',ageBaby:'Babies / toddlers (0–3 years)',ageChild:'Children and teenagers (4–14 years)',ageAdult:'Adults (15 years and over)',
-    babiesNote:'Babies and toddlers (aged 0–3) will stay with their parents. Parents, please bring the food they will need for dinner and the evening.',
-    childrenNote:'For dinner, children and teenagers (aged 4–14) will be welcomed in a separate room with one or more babysitters / activity leaders.',
+    babiesNote:'Babies and toddlers (aged 0–3) will stay with their parents, without a dedicated chair or seat. Parents, please bring the food they will need for dinner and the evening.',
+    childrenNote:'For dinner, children and teenagers (aged 4–14) will have free seating in a separate room with one or more babysitters / activity leaders. Only adults (aged 15 and over) will have reserved seats in the main room.',
     deadline:'Strict deadline: 10 January 2027 at 11:59 pm (Paris time).',
     deadlineRule:'After this deadline, it will no longer be possible to submit a response. No exceptions will be made due to our organisational commitments with the caterer.',
     deadlineReminder:'No responses can be submitted after 10 January 2027 at 11:59 pm (Paris time), without exception.',
