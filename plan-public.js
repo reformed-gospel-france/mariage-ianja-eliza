@@ -15,7 +15,7 @@
     const tables=document.querySelector('#tables');tables.replaceChildren();
     capacities.forEach((capacity,i)=>{
       const card=document.createElement('article');card.className='table';
-      const cover=document.createElement('div');cover.className='table-cover';
+      const cover=document.createElement('div');cover.className='table-cover portrait-table portrait-'+i;
       const label=document.createElement('span');label.className='eyebrow';label.textContent=`TABLE ${String(i+1).padStart(2,'0')}`;
       const name=document.createElement('span');name.className='table-name';name.textContent=names[i];
       const guests=document.createElement('span');guests.className='guest-count';guests.textContent=en?`${capacity} seats`:`${capacity} places`;
