@@ -121,7 +121,7 @@
   });
   function language(next) {
     lang = next; document.documentElement.lang = lang;
-    document.title = lang === 'en' ? 'Ianja & Eliza — RSVP' : 'Ianja & Eliza — Confirmation de présence';
+    document.title = lang === 'en' ? 'Ianja & Eliza — Confirm your attendance' : 'Ianja & Eliza — Confirmez votre présence';
     document.querySelectorAll('[data-i18n]').forEach(el => el.textContent = (lang === 'en' ? en : french)[el.dataset.i18n]);
     if (config.practical[lang]) $('#practical-details').textContent = config.practical[lang];
     document.querySelectorAll('[data-lang]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.lang===lang)));

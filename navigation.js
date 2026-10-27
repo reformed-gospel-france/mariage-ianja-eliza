@@ -11,7 +11,7 @@
   toggle.setAttribute('aria-controls','main-navigation'); toggle.setAttribute('aria-expanded','false');
   const nav = document.createElement('nav');nav.id='main-navigation';nav.className='main-navigation';
   const items = [
-    ['index.html','Accueil','Home'],['infos-pratiques.html','Infos pratiques','Practical information'],
+    ['index.html','Confirmez votre présence','Confirm your attendance'],['infos-pratiques.html','Infos pratiques','Practical information'],
     ['liste-de-mariage.html','Liste de mariage','Gift list'],
     ['plan-de-table.html','Plan de table','Seating plan'],
     ['questions-frequentes.html','Questions fréquentes','FAQs'],
