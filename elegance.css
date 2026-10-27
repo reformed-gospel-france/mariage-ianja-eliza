@@ -22,3 +22,6 @@ footer{position:relative;background:linear-gradient(145deg,#f0e2eb,#f1e7d7);bord
 @media(prefers-reduced-motion:reduce){.primary,.main-navigation a{transition:none}}
 @media print{body{background:white}body::before,body::after{display:none}.rsvp-photos{display:grid;margin:20px 0;overflow:visible}.rsvp-photos figure{transform:none!important}.top,.hero .welcome-art,.rsvp-card,.table{box-shadow:none}}
 .photo-scroll-hint{display:none}body::before,body::after{height:125px}@media(min-width:1200px){body::before,body::after{height:150px}}@media(max-width:700px){body::before,body::after{height:85px}.photo-scroll-hint{display:block;text-align:center;font-size:11px;color:var(--muted);margin:-25px 0 35px}}
+
+/* Cadrages adaptés à la nouvelle sélection de photos. */
+.rsvp-photos figure:first-child img{object-position:50% 35%}.rsvp-photos figure:nth-child(2) img{object-position:47% 60%}.rsvp-photos figure:last-child img{object-position:45% 70%}

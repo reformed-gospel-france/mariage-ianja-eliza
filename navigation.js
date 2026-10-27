@@ -14,7 +14,8 @@
     ['index.html','Accueil','Home'],['infos-pratiques.html','Infos pratiques','Practical information'],
     ['liste-de-mariage.html','Liste de mariage','Gift list'],
     ['plan-de-table.html','Plan de table','Seating plan'],
-    ['questions-frequentes.html','Questions fréquentes','FAQs']
+    ['questions-frequentes.html','Questions fréquentes','FAQs'],
+    ['notre-engagement.html','Notre foi, notre mariage','Our faith, our marriage']
   ];
   const file = location.pathname.split('/').pop() || 'index.html';
   const links=items.map(([href,fr,en])=>{

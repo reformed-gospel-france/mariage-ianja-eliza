@@ -29,3 +29,5 @@ h2,.memories h2{font-family:Georgia,'Times New Roman',serif;font-style:italic;fo
 @media(min-width:700px){.photo-gallery{grid-template-columns:repeat(3,minmax(0,1fr));max-width:none;gap:20px;align-items:start}.photo-gallery figure:nth-child(2){margin-top:30px}.photo-gallery figcaption{font-size:18px}.hero{padding-top:30px}.welcome-art{width:90%}}
 @media(max-width:420px){.hero{margin:0 -12px}.hero .intro{padding:0 12px}.welcome-art{border-radius:2px}.memories{margin-top:45px}.finder{margin-bottom:45px}}
 @media print{.welcome-art{max-width:430px}.memories{display:none}.top{display:none}}
+
+.photo-gallery figure:first-child img{object-position:55% 65%}.photo-gallery figure:nth-child(2) img{object-position:50% 65%}.photo-gallery figure:nth-child(3) img{object-position:55% 40%}

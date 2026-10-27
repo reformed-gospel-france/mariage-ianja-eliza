@@ -16,8 +16,8 @@
     '.memories > .eyebrow': 'CELEBRATING THE GRACE OF GOD',
     '#memories-title': 'HE WHO HAS LOVED US SO MUCH AND UNITED US',
     '.memories > .intro': 'Memories of the two of us, and now a joy to share with you.',
-    '.photo-gallery figure:nth-child(1) figcaption': 'A memory together',
-    '.photo-gallery figure:nth-child(2) figcaption': 'Hand in hand',
+    '.photo-gallery figure:nth-child(1) figcaption': 'A memory of Étretat',
+    '.photo-gallery figure:nth-child(2) figcaption': 'A moment together',
     '.photo-gallery figure:nth-child(3) figcaption': 'The joy of being together',
     '.memories cite': 'Ecclesiastes 4:12',
     'footer p': 'Thank you for being part of our story.'
@@ -27,9 +27,9 @@
     ['#search', 'placeholder', 'For example: Camille'],
     ['#clear', 'aria-label', 'Clear search'],
     ['.welcome-art', 'alt', 'Ianja and Eliza, 29 May 2027. A wooden cross decorated with burgundy, purple and white flowers on an ivory background.'],
-    ['.photo-gallery figure:nth-child(1) img', 'alt', 'Ianja and Eliza smiling together in a garden.'],
-    ['.photo-gallery figure:nth-child(2) img', 'alt', 'Ianja kneels and holds Eliza’s hand on the beach at Étretat.'],
-    ['.photo-gallery figure:nth-child(3) img', 'alt', 'Ianja and Eliza smile together in formal dress in a garden.'],
+    ['.photo-gallery figure:nth-child(1) img', 'alt', 'Ianja behind Eliza on the beach beneath the cliffs.'],
+    ['.photo-gallery figure:nth-child(2) img', 'alt', 'Ianja kisses Eliza on the cheek beside the cliffs at Étretat.'],
+    ['.photo-gallery figure:nth-child(3) img', 'alt', 'Ianja and Eliza together at Mariya’s.'],
     ['meta[name="description"]', 'content', 'Welcome to Ianja and Eliza’s wedding. Find your table and the people sharing your evening.']
   ];
   const originals = new Map(Object.keys(translations).map(selector => [selector, document.querySelector(selector).innerHTML]));
