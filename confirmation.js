@@ -13,6 +13,9 @@
     en:{sending:'Sending…',success:'Thank you! Your response has been saved. We look forward to celebrating with you.',declined:'Thank you for letting us know. Your response has been saved.',timeout:'We have not received confirmation that your response was saved. You may retry: an identical retry will not create a duplicate.',error:'We could not confirm that your response was saved. Please try again shortly.',closed:'RSVPs are now closed.',invalid:'Please check the form fields.',names:'Enter one person per line, matching the total number of people.'}
   };
   Object.assign(en, {
+    yourAge:'Your age group on the wedding day',ageBaby:'Babies / toddlers (0–3 years)',ageChild:'Children and teenagers (4–14 years)',ageAdult:'Adults (15 years and over)',
+    babiesNote:'Babies and toddlers (aged 0–3) will stay with their parents. Parents, please bring the food they will need for dinner and the evening.',
+    childrenNote:'For dinner, children and teenagers (aged 4–14) will be welcomed in a separate room with one or more babysitters / activity leaders.',
     deadline:'Strict deadline: 10 January 2027 at 11:59 pm (Paris time).',
     deadlineRule:'After this deadline, it will no longer be possible to submit a response. No exceptions will be made due to our organisational commitments with the caterer.',
     deadlineReminder:'No responses can be submitted after 10 January 2027 at 11:59 pm (Paris time), without exception.',
@@ -57,6 +60,9 @@
   };
   let guestSequence = 0;
   const guestRows = [];
+  const ageKeys = ['baby','child','adult'];
+  const ageLabels = () => lang === 'en' ? ['Babies / toddlers (0–3 years)','Children and teenagers (4–14 years)','Adults (15 years and over)'] : ['Bébés / nourrissons (0 à 3 ans)','Enfants et ados (4 à 14 ans)','Adultes (15 ans et plus)'];
+  const guestAges = () => [ageKeys.find(key=>$('#age-'+key).checked)||'',...guestRows.map(row=>ageKeys.find(key=>row.ages[key].checked)||'')];
   const populateCountries = () => {
     const selected = $('#phone-country').value || 'FR';
     const names = new Intl.DisplayNames([lang],{type:'region'});
@@ -80,6 +86,8 @@
     const names = [$('#full-name').value.trim(), ...guestRows.map(row=>row.input.value.trim())];
     $('#guest-count').value = String(yes ? names.length : 0);
     $('#guest-names').value = yes ? names.join('\n') : '';
+    $('#guest-ages').value = JSON.stringify(yes ? guestAges() : []);
+    ageKeys.forEach(key=>{$('#age-'+key).disabled=!yes||completed;$('#age-'+key).required=yes;});
     $('#full-name').setCustomValidity($('#full-name').value && $('#full-name').value.trim().length < 2 ? (lang === 'en' ? 'Please enter your first and last name.' : 'Veuillez saisir votre prénom et nom.') : '');
     guestRows.forEach((row,i) => {
       row.label.textContent = lang === 'en' ? `Guest ${i+2} — First and last name` : `Invité ${i+2} — Prénom et nom`;
@@ -87,6 +95,8 @@
       row.remove.setAttribute('aria-label',lang === 'en' ? `Remove guest ${i+2}` : `Retirer l’invité ${i+2}`);
       row.input.disabled = !yes || completed; row.input.required = yes;
       row.input.setCustomValidity(row.input.value && row.input.value.trim().length < 2 ? (lang === 'en' ? 'Please enter a first and last name.' : 'Veuillez saisir un prénom et nom.') : '');
+      row.ageLegend.textContent=lang==='en'?'Age group on the wedding day':'Tranche d’âge le jour du mariage';
+      ageKeys.forEach((key,index)=>{row.ages[key].disabled=!yes||completed;row.ages[key].required=yes;row.ageTexts[key].textContent=ageLabels()[index];});
     });
     $('#guest-total').textContent = lang === 'en' ? `${names.length} ${names.length === 1 ? 'person' : 'people'} attending, including you` : `${names.length} personne${names.length > 1 ? 's' : ''} présente${names.length > 1 ? 's' : ''}, vous compris`;
     $('#add-guest').disabled = guestRows.length >= 29 || completed || pending;
@@ -97,10 +107,17 @@
     const label = document.createElement('label'), input = document.createElement('input'), remove = document.createElement('button');
     input.id = `extra-guest-${++guestSequence}`; input.type = 'text'; input.maxLength = 120; input.autocomplete = 'off';
     label.htmlFor = input.id; remove.type = 'button'; remove.className = 'remove-guest';
-    const entry = {row,label,input,remove};
+    const ageField=document.createElement('fieldset');ageField.className='age-options';
+    const ageLegend=document.createElement('legend'),ageList=document.createElement('div');ageList.className='age-choices';
+    const ages={},ageTexts={};ageKeys.forEach(key=>{
+      const ageLabel=document.createElement('label'),radio=document.createElement('input'),span=document.createElement('span');
+      radio.type='radio';radio.name=`extraAge${guestSequence}`;radio.value=key;radio.addEventListener('change',validateNames);
+      ages[key]=radio;ageTexts[key]=span;ageLabel.append(radio,span);ageList.append(ageLabel);
+    });ageField.append(ageLegend,ageList);
+    const entry = {row,label,input,remove,ageLegend,ages,ageTexts};
     input.addEventListener('input',validateNames);
     remove.addEventListener('click', () => { if (pending || completed) return; guestRows.splice(guestRows.indexOf(entry),1); row.remove(); validateNames(); $('#add-guest').focus(); });
-    row.append(label,input,remove); guestRows.push(entry); $('#additional-guests').append(row); validateNames(); input.focus();
+    row.append(label,input,remove,ageField); guestRows.push(entry); $('#additional-guests').append(row); validateNames(); input.focus();
   });
   function language(next) {
     lang = next; document.documentElement.lang = lang;
@@ -117,7 +134,7 @@
   document.querySelectorAll('[data-lang]').forEach(el=>el.addEventListener('click',()=>language(el.dataset.lang)));
   $('#rsvp').addEventListener('change', () => {
     const yes = $('#rsvp').elements.attendance.value === 'yes'; $('#guest-fields').hidden = !yes;
-    ['guest-count','guest-names','diet'].forEach(id => { $('#'+id).disabled = !yes; });
+    ['guest-count','guest-names','guest-ages','diet'].forEach(id => { $('#'+id).disabled = !yes; });
     ['ceremony','drinks','reception'].forEach(id => { $('#'+id).disabled = !yes; });
     $('#ceremony').required = yes;
     validateNames();
@@ -132,6 +149,7 @@
     name:$('#full-name').value.trim(),email:$('#contact-email').value.trim(),phone:$('#international-phone').value,
     yes:$('#rsvp').elements.attendance.value === 'yes',count:Number($('#guest-count').value),
     names:$('#guest-names').value,diet:$('#diet').value.trim(),
+    ages:guestAges(),
     ceremony:$('#ceremony').checked,drinks:$('#drinks').checked,reception:$('#reception').checked
   });
   function renderReview() {
@@ -143,7 +161,7 @@
     ];
     if(response.yes) rows.push(
       [english?'People attending':'Personnes présentes',String(response.count)],
-      [english?'Names':'Noms',response.names],
+      [english?'Names and age groups':'Noms et tranches d’âge',response.names.split('\n').map((name,index)=>name+' — '+(ageLabels()[ageKeys.indexOf(response.ages[index])] || (english?'Please specify':'À préciser'))).join('\n')],
       [english?'Ceremony':'Cérémonie',response.ceremony?yes:no],
       [english?'Drinks reception':'Vin d’honneur',response.drinks?yes:no],
       [english?'Wedding reception / dinner':'Réception / dîner',response.reception?yes:no],
