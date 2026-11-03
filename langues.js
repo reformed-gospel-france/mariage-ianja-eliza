@@ -2,7 +2,7 @@
 (() => {
   const translations = {
     '.table-shortcut': 'Find my table ↓',
-    '#title': 'The wedding of Ianja & Eliza',
+    '#title': 'Seating plan',
     '.hero h2': 'By our side on our special day',
     '.hero .intro': 'Thank you for joining us to celebrate.\nFind your table and enjoy the evening.',
     '.finder > .eyebrow': 'A PLACE FOR EACH OF YOU',
@@ -32,8 +32,8 @@
     ['.photo-gallery figure:nth-child(3) img', 'alt', 'Ianja and Eliza together at Mariya’s.'],
     ['meta[name="description"]', 'content', 'Welcome to Ianja and Eliza’s wedding. Find your table and the people sharing your evening.']
   ];
-  const originals = new Map(Object.keys(translations).map(selector => [selector, document.querySelector(selector).innerHTML]));
-  attributes.forEach(entry => entry.push(document.querySelector(entry[0]).getAttribute(entry[1])));
+  const originals = new Map(Object.keys(translations).filter(selector => document.querySelector(selector)).map(selector => [selector, document.querySelector(selector).innerHTML]));
+  attributes.forEach(entry => entry.push(document.querySelector(entry[0])?.getAttribute(entry[1])));
   const originalTitle = document.title;
   let saved; try { saved = localStorage.getItem('mariage-langue'); } catch (_) {}
   const query = new URLSearchParams(location.search).get('lang');
@@ -44,11 +44,11 @@
     document.documentElement.lang = lang;
     document.title = lang === 'en' ? 'Ianja & Eliza — Our seating plan' : originalTitle;
     Object.entries(translations).forEach(([selector, english]) => {
-      const node = document.querySelector(selector);
+      const node = document.querySelector(selector); if (!node) return;
       if (lang === 'fr') node.innerHTML = originals.get(selector);
       else { node.replaceChildren(); english.split('\n').forEach((line, i) => { if (i) node.append(document.createElement('br')); node.append(document.createTextNode(line)); }); }
     });
-    attributes.forEach(([selector, attribute, english, french]) => document.querySelector(selector).setAttribute(attribute, lang === 'en' ? english : french));
+    attributes.forEach(([selector, attribute, english, french]) => document.querySelector(selector)?.setAttribute(attribute, lang === 'en' ? english : french));
     document.querySelectorAll('[data-lang]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.lang === lang)));
     try { localStorage.setItem('mariage-langue', lang); } catch (_) {}
     document.dispatchEvent(new Event('mariage:language'));
